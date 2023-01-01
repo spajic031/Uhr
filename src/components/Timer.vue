@@ -42,23 +42,24 @@
         startStop: function(){
         if(this.toggle == 0){
             this.start();
-            this.toggle = 1;
-            this.icon = "mdi-pause";}
+          }
             
         else{
-            this.stop();
-            this.toggle = 0;
-            this.icon = "mdi-play";  
+            this.stop(); 
         }
         
         },
         //den Timer starten
         start: function(){
             this.timer = setInterval(this.countdown, 1000);
+            this.toggle = 1;
+            this.icon = "mdi-pause";
         },
         //den Timer stoppen
         stop: function(){
             clearTimeout(this.timer);
+            this.toggle = 0;
+            this.icon = "mdi-play";
         },
         //den Timer zurücksetzen
         reset: function(){
@@ -97,4 +98,5 @@
     .v-text-field{
       width: 200px;
 }
+h1{font-size: 15vw;}
 </style>

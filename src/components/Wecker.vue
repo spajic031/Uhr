@@ -64,4 +64,5 @@
     .v-text-field{
       width: 200px;
 }
+h1{font-size: 15vw;}
 </style>

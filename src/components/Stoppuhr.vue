@@ -1,6 +1,6 @@
 <template>
     <div >
-        <h1 style="font-size:5rem">{{stunden}}:{{minuten}}:{{sekunden}}</h1>
+        <h1>{{stunden}}:{{minuten}}:{{sekunden}}</h1>
         <div class="d-flex flex-row align-center justify-center">
         <v-btn @click="startStop">
         <v-icon>{{ icon }}</v-icon>
@@ -33,12 +33,10 @@
         startStop: function(){
         if(this.toggle == 0){
             this.start();
-            this.toggle = 1;}
+            }
             
         else{
-            this.stop();
-            this.toggle = 0;
-            
+            this.stop(); 
         }
         
         },
@@ -46,12 +44,14 @@
         start: function(){
             this.timer = setInterval(this.veraendern, 1000);
             this.icon = "mdi-pause";
+            this.toggle = 1;
             
         },
         //den Timer stoppen
         stop: function(){
             clearTimeout(this.timer);
             this.icon = "mdi-play";
+            this.toggle = 0;
         },
         //den Timer zurücksetzen
         reset: function(){
@@ -63,3 +63,7 @@
     }
   }
 </script>
+<style scoped>
+
+h1{font-size: 15vw;}
+</style>
